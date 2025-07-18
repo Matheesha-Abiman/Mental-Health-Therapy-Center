@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="816.0" prefWidth="1080.0" style="-fx-background-color: #e6ecf0; -fx-border-radius: 20; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse72.ormfinalcoursework.controller.TherapistAvailabilityController">
+
+    <children>
+        <!-- Header -->
+        <Label alignment="CENTER" layoutX="2.0" layoutY="26.0" prefHeight="31.0" prefWidth="1074.0" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 30px;" text="Therapist Availability Schedule">
+            <font><Font name="Bell MT" size="26.0" /></font>
+        </Label>
+
+        <!-- Form Fields -->
+        <Label layoutX="230.0" layoutY="147.0" style="-fx-text-fill: #2c3e50;" text="Therapist :" />
+        <JFXComboBox fx:id="cmbTherapistId" layoutX="317.0" layoutY="145.0" prefHeight="24.0" prefWidth="477.0" />
+
+        <Label layoutX="201.0" layoutY="217.0" style="-fx-text-fill: #2c3e50;" text="Available Date:" />
+        <DatePicker fx:id="datePicker" layoutX="317.0" layoutY="212.0" prefHeight="30.0" prefWidth="477.0" />
+
+        <Label layoutX="228.0" layoutY="278.0" style="-fx-text-fill: #2c3e50;" text="Start Time:" />
+        <JFXComboBox fx:id="cmbStartTime" layoutX="320.0" layoutY="276.0" prefWidth="180.0" />
+
+        <Label layoutX="595.0" layoutY="278.0" style="-fx-text-fill: #2c3e50;" text="End Time:" />
+        <JFXComboBox fx:id="cmbEndTime" layoutX="680.0" layoutY="276.0" prefHeight="24.0" prefWidth="180.0" />
+
+        <!-- Save Button -->
+        <JFXButton fx:id="btnSave" layoutX="212.0" layoutY="342.0" onAction="#onSaveAvailability" prefHeight="42.0" prefWidth="160.0" style="-fx-background-color: #2ecc71; -fx-border-radius: 20;" text="Save Availability" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+        </JFXButton>
+
+        <!-- Cancel Button -->
+        <JFXButton fx:id="btnCansel" layoutX="460.0" layoutY="342.0" onAction="#canselOnAction" prefHeight="42.0" prefWidth="160.0" style="-fx-background-color: #e74c3c; -fx-border-radius: 20;" text="Cancel Availability" textFill="WHITE">
+            <font><Font name="System Bold Italic" size="13.0" /></font>
+        </JFXButton>
+
+        <!-- Search Button -->
+        <JFXButton fx:id="btnSearch" layoutX="810.0" layoutY="142.0" onAction="#onSearchAvailability" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: #3498db; -fx-border-radius: 20;" text="Search Availability" textFill="WHITE">
+            <font><Font name="System Bold Italic" size="13.0" /></font>
+        </JFXButton>
+
+        <!-- Refresh Button -->
+        <JFXButton fx:id="btnRefresh" layoutX="714.0" layoutY="342.0" onAction="#refreshOnAction" prefHeight="42.0" prefWidth="160.0" style="-fx-background-color: #9b59b6; -fx-border-radius: 20;" text="Refresh" textFill="WHITE">
+            <font><Font name="System Bold Italic" size="13.0" /></font>
+        </JFXButton>
+
+        <!-- Table of Availabilities -->
+        <TableView fx:id="tblAvailability" layoutX="13.0" layoutY="408.0" onMouseClicked="#tblAvailabilityClickOnAction" prefHeight="391.0" prefWidth="1053.0" style="-fx-background-radius: 10; -fx-border-radius: 10;">
+            <columns>
+                <TableColumn fx:id="colTherapistId" prefWidth="150.0" text="Therapist ID" />
+                <TableColumn fx:id="colDate" prefWidth="186.0" text="Date" />
+                <TableColumn fx:id="colStartTime" prefWidth="349.0" text="Start Time" />
+                <TableColumn fx:id="colEndTime" prefWidth="367.0" text="End Time" />
+            </columns>
+        </TableView>
+
+    </children>
+</AnchorPane>
